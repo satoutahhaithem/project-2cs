@@ -25,14 +25,25 @@
     <h1>Video Streaming Demonstration</h1>
     <img width="500" height="500" src="{{ url_for('video_feed') }}">
     <h1>Car Control</h1>
-    <button type="button" onclick="sendCommand('forward')">Forward</button>
+    <!-- This code work for single click you must modify also the delay on the raspberry code  -->
+
+
+
+    <!-- <button type="button" onclick="sendCommand('forward')">Forward</button>
     <br><br>
     <button type="button" onclick="sendCommand('left')">Left</button>
     <button type="button" onclick="sendCommand('stop')">Stop</button>
     <button type="button" onclick="sendCommand('right')">Right</button>
     <br><br>
-    <button type="button" onclick="sendCommand('backward')">Backward</button>
+    <button type="button" onclick="sendCommand('backward')">Backward</button> -->
+    <!-- Add event listeners for button press and release -->
+
+    
+    <button type="button" onmousedown="sendCommand('forward')" onmouseup="sendCommand('stop')">Forward</button>
+    <button type="button" onmousedown="sendCommand('left')" onmouseup="sendCommand('stop')">Left</button>
+    <button type="button" onmousedown="sendCommand('right')" onmouseup="sendCommand('stop')">Right</button>
+    <button type="button" onmousedown="sendCommand('backward')" onmouseup="sendCommand('stop')">Backward</button>
+
   </body>
 </html>
-
 
