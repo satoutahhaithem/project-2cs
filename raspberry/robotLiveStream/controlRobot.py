@@ -47,7 +47,7 @@ def backward(p1,p2):
     GPIO.output(in3,GPIO.HIGH)
     GPIO.output(in4,GPIO.LOW)
 
-def left(p1,p2):
+def right(p1,p2):
     p1.ChangeDutyCycle(speedRL)
     p2.ChangeDutyCycle(speedRL)
     GPIO.output(in1,GPIO.LOW)
@@ -55,7 +55,7 @@ def left(p1,p2):
     GPIO.output(in3,GPIO.HIGH)
     GPIO.output(in4,GPIO.LOW)
 
-def right(p1,p2):
+def left(p1,p2):
     p1.ChangeDutyCycle(speedRL)
     p2.ChangeDutyCycle(speedRL)
     GPIO.output(in1,GPIO.HIGH)
@@ -79,21 +79,12 @@ for message in consumer:
     direction = message.value
     if direction == 'forward':
         forward(p1,p2)
-        sleep(delayFB)
-        stop()
     elif direction == 'backward':
         backward(p1,p2)
-        sleep(delayFB)
-        stop()
     elif direction == 'left':
         left(p1,p2)
-        sleep(delayRL)
-        stop()
+
     elif direction == 'right':
         right(p1,p2)
-        sleep(delayRL)
-        stop()
     elif direction == 'stop':
-        stop()
-        sleep(1)
         stop()
