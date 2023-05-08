@@ -33,6 +33,12 @@ def right():
 def stop():
     producer.send(topic, 'stop')
 
+def auto():
+    producer.send(topic, 'auto')
+
+def manual():
+    producer.send(topic, 'manual')
+
 #_____________________________________________________________________
 #_______________________________ the functions live stream __________________________
 def gen_frames():
@@ -68,6 +74,11 @@ def control():
             right()
         elif command == 'stop':
             stop()
+        elif command == 'auto':
+            auto()
+        elif command ==  'manual':
+            manual()
+
 
         return jsonify({'status': 'success'})
     
