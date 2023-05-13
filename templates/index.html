@@ -22,24 +22,36 @@
     </script>
     <script src="{{ url_for('static', filename='js/tailwind.min.js') }}"></script>
   </head>
-  <body>
-    <h1>Video Streaming Demonstration</h1>
-    <img width="1280" height="720" src="{{ url_for('video_feed') }}">
-    <h1>Car Control</h1>
+  <body class="min-h-screen flex pt-5 flex-col">
+    <button class="self-center border p-3 rounded-full" onmousedown="sendCommand('forward')" onmouseup="sendCommand('stop')">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
+          </svg>          
+    </button>
+      <div class="my-10 flex items-center justify-center gap-20">
+        <button class="p-3 rounded-full border" onmousedown="sendCommand('left')" onmouseup="sendCommand('stop')">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>              
+        </button>
+          <img class="max-w-7xl grow-0 w-full border" width="1280" height="720" src="{{ url_for('video_feed') }}">
+          <button class="p-3 rounded-full border" onmousedown="sendCommand('right')" onmouseup="sendCommand('stop')">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                </svg>          
+          </button>
+    </div>
+    <button class="p-3 rounded-full self-center border" onmousedown="sendCommand('backward')" onmouseup="sendCommand('stop')">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5L12 21m0 0l-7.5-7.5M12 21V3" />
+          </svg>          
+    </button>
     <!-- This code work for single click you must modify also the delay on the raspberry code  -->
 
 
 
-    <!-- <button type="button" onclick="sendCommand('forward')">Forward</button>
-    <br><br>
-    <button type="button" onclick="sendCommand('left')">Left</button>
-    <button type="button" onclick="sendCommand('stop')">Stop</button>
-    <button type="button" onclick="sendCommand('right')">Right</button>
-    <br><br>
-    <button type="button" onclick="sendCommand('backward')">Backward</button> -->
-    <!-- Add event listeners for button press and release -->
 
-    <button type="button" onclick="sendCommand('auto')">Auto</button>
+    <!-- <button type="button" onclick="sendCommand('auto')">Auto</button>
     <button type="button" onclick="sendCommand('manual')">Manual</button>
 
     
@@ -47,7 +59,7 @@
     <button id="btn2" type="button" onmousedown="sendCommand('left')" onmouseup="sendCommand('stop')">Left</button>
     <button id="btn3" type="button" onmousedown="sendCommand('right')" onmouseup="sendCommand('stop')">Right</button>
     <button id="btn4" type="button" onmousedown="sendCommand('backward')" onmouseup="sendCommand('stop')">Backward</button>
-    <button id="btn4" type="button" onclick="sendCommand('stop')">stop</button>
+    <button id="btn4" type="button" onclick="sendCommand('stop')">stop</button> -->
 
   </body>
 
