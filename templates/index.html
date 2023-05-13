@@ -22,19 +22,24 @@
     </script>
     <script src="{{ url_for('static', filename='js/tailwind.min.js') }}"></script>
   </head>
-  <body class="min-h-screen flex pt-5 flex-col">
+  <body class="flex flex-col sm:pt-5">
+    <button class="absolute right-10 p-3 bg-red-500 rounded-full" onclick="sendCommand('stop')">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
+          </svg>          
+    </button>
     <button class="self-center border border-black p-3 rounded-full" onmousedown="sendCommand('forward')" onmouseup="sendCommand('stop')">
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 10.5L12 3m0 0l7.5 7.5M12 3v18" />
           </svg>          
     </button>
-      <div class="my-10 flex items-center justify-center gap-20">
+      <div class="my-4 lg:my-10 flex items-center justify-center gap-4 lg:gap-20">
         <button class="p-3 rounded-full border border-black" onmousedown="sendCommand('left')" onmouseup="sendCommand('stop')">
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
               </svg>              
         </button>
-          <img class="border" style="height:720px" width="1280" height="720" src="{{ url_for('video_feed') }}">
+          <img class="border w-full max-w-7xl" style="height:720px" width="1280" height="720" src="{{ url_for('video_feed') }}">
           <button class="p-3 rounded-full border border-black" onmousedown="sendCommand('right')" onmouseup="sendCommand('stop')">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
