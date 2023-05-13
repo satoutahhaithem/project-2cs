@@ -11,10 +11,10 @@ topic1 = 'test'
 topic = 'carControl'
 consumer = KafkaConsumer(
     topic1,
-    bootstrap_servers=['192.168.43.33:9092'],
+    bootstrap_servers=['192.168.18.15:9092'],
     auto_offset_reset='latest'
 )
-producer = KafkaProducer(bootstrap_servers=['192.168.43.33:9092'], value_serializer=lambda x: json.dumps(x).encode('utf-8'))
+producer = KafkaProducer(bootstrap_servers=['192.168.18.15:9092'], value_serializer=lambda x: json.dumps(x).encode('utf-8'))
 
 
 #_______________________________ the functions car control __________________________

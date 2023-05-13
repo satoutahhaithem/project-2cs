@@ -6,13 +6,13 @@ topic = 'test'
 producer = KafkaProducer(bootstrap_servers=['192.168.43.33:9092'])
 
 vc = cv2.VideoCapture(0)
-vc.set(cv2.CAP_PROP_FPS, 30)  # Adjust the frame rate as needed
+vc.set(cv2.CAP_PROP_FPS, 10)  # Adjust the frame rate as needed
 vc.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
 vc.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 # Define the codec and create a VideoWriter object
 fourcc = cv2.VideoWriter_fourcc(*'XVID')
-out = cv2.VideoWriter('output.avi', fourcc, 30.0, (640, 480))
+out = cv2.VideoWriter('output.avi', fourcc, 10.0, (640, 480))
 
 while True:
     ret, frame = vc.read()
