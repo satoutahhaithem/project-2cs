@@ -20,10 +20,11 @@
           });
       }
     </script>
+    <script src="{{ url_for('static', filename='js/tailwind.min.js') }}"></script>
   </head>
   <body>
     <h1>Video Streaming Demonstration</h1>
-    <img width="500" height="500" src="{{ url_for('video_feed') }}">
+    <img width="1280" height="720" src="{{ url_for('video_feed') }}">
     <h1>Car Control</h1>
     <!-- This code work for single click you must modify also the delay on the raspberry code  -->
 
