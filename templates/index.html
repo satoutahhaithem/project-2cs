@@ -42,10 +42,30 @@
     <button type="button" onclick="sendCommand('manual')">Manual</button>
 
     
-    <button type="button" onmousedown="sendCommand('forward')" onmouseup="sendCommand('stop')">Forward</button>
-    <button type="button" onmousedown="sendCommand('left')" onmouseup="sendCommand('stop')">Left</button>
-    <button type="button" onmousedown="sendCommand('right')" onmouseup="sendCommand('stop')">Right</button>
-    <button type="button" onmousedown="sendCommand('backward')" onmouseup="sendCommand('stop')">Backward</button>
+    <button id="btn1" type="button" onmousedown="sendCommand('forward')" onmouseup="sendCommand('stop')">Forward</button>
+    <button id="btn2" type="button" onmousedown="sendCommand('left')" onmouseup="sendCommand('stop')">Left</button>
+    <button id="btn3" type="button" onmousedown="sendCommand('right')" onmouseup="sendCommand('stop')">Right</button>
+    <button id="btn4" type="button" onmousedown="sendCommand('backward')" onmouseup="sendCommand('stop')">Backward</button>
+    <button id="btn4" type="button" onclick="sendCommand('stop')">stop</button>
 
   </body>
+
+  <script>
+    document.addEventListener("keydown", function(event) {
+   // Up arrow key
+        if(event.code === "ArrowUp"){
+          sendCommand('forward')
+        }else if(event.code === "ArrowLeft"){
+          sendCommand("left")
+        }else if(event.code === "ArrowRight"){
+          sendCommand("right")
+        }else if (event.code === "ArrowDown"){
+          sendCommand("backward")
+        } 
+    });
+
+    document.addEventListener("keyup", function(event) {
+          sendCommand('stop')
+    });
+    </script>
 </html>
