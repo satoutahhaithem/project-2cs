@@ -22,15 +22,15 @@
     </script>
     <script src="{{ url_for('static', filename='js/tailwind.min.js') }}"></script>
   </head>
-  <body class="flex flex-col">
+  <body class="min-h-screen">
 
     <!-- <div class="flex gap-4">
       <button onclick="sendCommand('stream')">Stream</button>
       <button onclick="sendCommand('stream_detection')">Stream Detection</button>
     </div> -->
 
-    <div class="mx-auto max-w-7xl flex items-center gap-10">
-      <img class="border w-full h-4/5" src="{{ url_for('video_feed') }}">
+    <div class="mx-auto h-full max-w-7xl flex items-center justify-center gap-10">
+      <img class="border h-full" style="max-height: 720px" src="{{ url_for('video_feed_detect') }}">
       <div class="">
         <div class="flex flex-col items-center">
           <button class="self-center border border-black p-3 rounded-full" onmousedown="sendCommand('forward')" onmouseup="sendCommand('stop')">
@@ -56,13 +56,13 @@
               </svg>          
           </button>
         </div>
-        <div class="mt-5 flex justify-between">
+        <div class="mt-5 flex gap-5">
           <button class="p-3 bg-red-500 rounded-full" onclick="sendCommand('stop')">
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="white" class="w-6 h-6">
                   <path stroke-linecap="round" stroke-linejoin="round" d="M18.364 18.364A9 9 0 005.636 5.636m12.728 12.728A9 9 0 015.636 5.636m12.728 12.728L5.636 5.636" />
                 </svg>          
           </button>
-          <button onclick="sendCommand('auto')">Auto</button>
+          <button class="px-5 py-0.5 rounded-lg bg-cyan-600 text-white" onclick="sendCommand('auto')">Auto</button>
       </div>
       </div>
     </div>
