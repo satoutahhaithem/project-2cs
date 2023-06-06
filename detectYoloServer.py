@@ -65,7 +65,7 @@ from utils.general import (LOGGER, Profile, check_file, check_img_size, check_im
 from utils.plots import Annotator, colors, save_one_box
 from utils.torch_utils import select_device, smart_inference_mode
 app = Flask(__name__)
-topic = 'carControl'
+topic = 'serverDetection'
 producer = KafkaProducer(bootstrap_servers=['192.168.195.217:9092'])
 
 @smart_inference_mode()
