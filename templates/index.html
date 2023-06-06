@@ -30,7 +30,8 @@
     </div> -->
 
     <div class="mx-auto h-full max-w-7xl flex items-center justify-center gap-10">
-      <img class="border h-full" style="max-height: 720px" src="{{ url_for('video_feed_detect') }}">
+    <!--  <img class="border h-full" style="max-height: 720px" src="{{ url_for('video_feed_detect') }}"> -->
+      <img class="border h-full" style="max-height: 720px" src="{{ url_for('video_feed') }}">
       <div class="">
         <div class="flex flex-col items-center">
           <button class="self-center border border-black p-3 rounded-full" onmousedown="sendCommand('forward')" onmouseup="sendCommand('stop')">
