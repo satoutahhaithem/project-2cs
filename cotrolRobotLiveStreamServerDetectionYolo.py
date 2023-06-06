@@ -7,21 +7,23 @@ import json
 
 app = Flask(__name__)
 
+SERVER = "192.168.195.99"
+KAFKA_SERVER_PORT = 9092
 
 topic1 = 'test'
 topic = 'carControl'
 topic2 = 'serverDetection'
 consumer = KafkaConsumer(
     topic1,
-    bootstrap_servers=['192.168.195.217:9092'],
+    bootstrap_servers=[f"{SERVER}:{KAFKA_SERVER_PORT}"],
     auto_offset_reset='latest'
 )
 consumer2 = KafkaConsumer(
     topic2,
-    bootstrap_servers=['192.168.195.217:9092'],
+    bootstrap_servers=[f"{SERVER}:{KAFKA_SERVER_PORT}"],
     auto_offset_reset='latest'
 )
-producer = KafkaProducer(bootstrap_servers=['192.168.195.217:9092'], value_serializer=lambda x: json.dumps(x).encode('utf-8'))
+producer = KafkaProducer(bootstrap_servers=[f"{SERVER}:{KAFKA_SERVER_PORT}"], value_serializer=lambda x: json.dumps(x).encode('utf-8'))
 
 
 #_______________________________ the functions car control __________________________
